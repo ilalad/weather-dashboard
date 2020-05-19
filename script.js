@@ -1,46 +1,41 @@
 // Creating an AJAX call for the specific city's weather when serached
 
-$(document).ready(function(){
-    $('#cityInput').click(function(){
-        var cityInput = $("#cityInput").val();
-        if(city != ''){
-           $.ajax({
-               url:  "https://api.openweathermap.org/data/2.5/weather?q=" +
-               cityInput + "&units=imperial" + "&APPID=12882752e4b2eaef1686774056c067d6",
-               method: "GET",
-             }).then(function (response) {
-                   console.log(data);
-               }}
-            } 
-        }
-              )};   
+$(document).ready(function () {
+  $("#city-submit").click(function () {
+    var cityInput = $("#cityInput").val();
+    if (city != "") {
+      $.ajax({
+        url:
+          "https://api.openweathermap.org/data/2.5/weather?q=" +
+          cityInput +
+          "&units=imperial" +
+          "&APPID=12882752e4b2eaef1686774056c067d6",
+        method: "GET",
+      }).then(function (response) {
+        console.log(data);
+      });
+    }
+  });
 
-    var lat = response.coord.lat;
-    var lon = response.coord.lon;
-    var date = $("<h2>").text(response.date);
-    var cityName = $("<h2>").text(response.cityName);
-    var cityTemp = $("<p>").text(response.temperature);
-    var humidity = $("<p>").text(response.humidity);
-    var windSpeed = $("<p>").text(response.windSpeed);
-    var uvIndex = $("<p>").text(response.uvIndex);
+  var lat = response.coord.lat;
+  var lon = response.coord.lon;
+  var date = $("<h2>").text(response.date);
+  var cityName = $("<h2>").text(response.cityName);
+  var cityTemp = $("<p>").text(response.temperature);
+  var humidity = $("<p>").text(response.humidity);
+  var windSpeed = $("<p>").text(response.windSpeed);
+  var uvIndex = $("<p>").text(response.uvIndex);
 
-
-
-    $("#city-div").empty();
-    $("#city-div").append(date,cityName, cityTemp,humidity,windSpeed,uvIndex
-    );
-    $("#display").append(cityName, cityTemp, windSpeed, humidity);
-
-
-
+  $("#city-div").empty();
+  $("#city-div").append(date, cityName, cityTemp, humidity, windSpeed, uvIndex);
+  $("#display").append(cityName, cityTemp, windSpeed, humidity);
+});
 
 // queryParams.q = $("#cityInput").val().trim();
 
 // THEN I am presented with current and future conditions for that city and that city is added to the search history
 
-
 // var temp = response.temperatue[0].icon;
-
 
 // Creating an element to have the temperatue displayed
 //Use `localStorage` to store any persistent data
