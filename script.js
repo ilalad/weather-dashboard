@@ -20,10 +20,11 @@ $(document).ready(function () {
         var yyyy = today.getFullYear();
         today = mm + "/" + dd + "/" + yyyy;
         $("#currentCity").text(response.name);
-        var cityTemp = $("<p>").text(response.temperature);
-        var humidity = $("<p>").text(response.humidity);
-        var windSpeed = $("<p>").text(response.windSpeed);
-        var uvIndex = $("<p>").text(response.uvIndex);
+        $("#temp").text(response.main.temp);
+        $("#humidity").text(response.main.humidity);
+        $("#wind").text(response.windSpeed);
+        $("#uv").text(response.wind.speed);
+
         // $("#currentCity").empty();
         // $("#currentCity").append(
         //   date,
