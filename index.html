@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather Dash Board</title>
+    <title>Weather Dashboard</title>
     <link
-        rel="stylesheet"
+      rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
@@ -20,19 +20,25 @@
     <nav class="navbar-fluid fixed-top bg-dark">
       <h1>Weather Dashboard</h1>
     </nav>
-    <br>
-    <br>
-     <br>
-     <div class="container">
+    <br />
+    <br />
+    <br />
+    <div class="container">
       <div class="row">
         <div class="col-3">
-        <label for="cityInput"><h3>Search for a City:</h3></label>
+          <label for="cityInput"><h3>Search for a City:</h3></label>
 
-         <!-- capturing the serach term -->
-        <input class="form-control" type="text" id="cityInput">
-         <button class="btn btn-primary fas fa-search" id="city-submit" value="city Search">Search</button>
+          <!-- capturing the serach term -->
+          <input class="form-control" type="text" id="cityInput" />
+          <button
+            class="btn btn-primary fas fa-search"
+            id="city-submit"
+            value="city Search"
+          >
+            Search
+          </button>
           <!-- list of searched cities -->
-         <article class="col" id="city-list"></article>
+          <article class="col" id="city-list"></article>
           <class class="card" style="width: 13rem;">
             <ul class="list-group list-group-flush">
               <li class="list-group-item"></li>
@@ -40,42 +46,36 @@
               <li class="list-group-item"></li>
               <li class="list-group-item"></li>
               <li class="list-group-item"></li>
-               <li class="list-group-item"></li>
+              <li class="list-group-item"></li>
               <li class="list-group-item"></li>
               <li class="list-group-item"></li>
             </ul>
-            </class>
+          </class>
         </div>
-    <!--For handling the search parameters -->
-     <div class="col-9">
-        <div class="cityName"></div>
-        <div class="windSpeed"></div>
-        <div class="humidity"></div>
-        <div class="cityTemp"></div>
-        <div class="jumbotron jumbotron-fluid">
+        <!--For handling the search parameters -->
+        <div class="col-9">
+          <div class="cityName"></div>
+          <div class="windSpeed"></div>
+          <div class="humidity"></div>
+          <div class="cityTemp"></div>
+          <br />
+          <div class="jumbotron jumbotron-fluid">
             <div class="container">
-              <h1 class="display-4">Atlanta (08/19/2020)</h1>
+              <h1 class="display" id="currentCity"></h1>
               <p class="lead">Temperature</p>
+              <div class="col-sm-12">
+                <div class="card">
+                  <!-- <div class="card-header"> -->
+                  <label for="fiveDay"><h3>5-Day Forecast:</h3></label>
+                  <strong> <i class="fa fa-table"></i> </strong>
+                </div>
+              </div>
             </div>
-          </div> 
-      </div>
-      <div class="col-sm-9">
-        <br />
-        <div class="card">
-          <!-- <div class="card-header"> -->
-              <label for="fiveDay"><h3>5-Day Forecast:</h3></label>
-            <strong> <i class="fa fa-table"></i> </strong>
           </div>
-  
         </div>
       </div>
-    </div>
-    </div>
     </div>
     <!-- For displaying 5-day weather results -->
-        
-
-
 
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
