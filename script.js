@@ -25,6 +25,7 @@ $(document).ready(function () {
         $("#humidity").text(response.main.humidity);
         $("#wind").text(response.wind.speed);
         $("#uv").text(response.uv);
+
       });
     }
   });
